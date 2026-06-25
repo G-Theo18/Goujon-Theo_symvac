@@ -18,13 +18,21 @@
             <tr class="table-secondary">
                 <th scope="col">Numéro</th>
                 <th scope="col">Nom</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
+
         <tbody>
             {% for vacataire in vacataires %}
             <tr class="table-dark">
                 <th scope="row">{{ vacataire.id }}</th>
                 <td>{{ vacataire.nom }}</td>
+                <td>
+                    <a href="{{ path('vacataire_edit', {id: vacataire.id}) }}" 
+                       class="btn btn-sm btn-warning">
+                        Modifier
+                    </a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
