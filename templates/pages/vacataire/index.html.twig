@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymVa - Mes vacataires{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>Mes vacataires</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-secondary">
+                <th scope="col">Numéro</th>
+                <th scope="col">Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vacataire in vacataires %}
+            <tr class="table-dark">
+                <th scope="row">{{ vacataire.id }}</th>
+                <td>{{ vacataire.nom }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {{ knp_pagination_render(vacataires) }}
+</div>
+{% endblock %}
