@@ -4,6 +4,13 @@
 
 {% block body %}
 <div class="container mt-4">
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-dismissible alert-success mt-4">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     <h1>Mes vacataires</h1>
 
     <table class="table table-hover">
